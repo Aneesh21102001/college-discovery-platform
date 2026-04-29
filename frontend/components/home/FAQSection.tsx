@@ -4,32 +4,41 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BadgeHelp } from "lucide-react";
 
 export default function FAQSection() {
   return (
     <section className="px-6 pb-20">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-center text-3xl font-bold">
-          Frequently Asked Questions
-        </h2>
+      <div className="mx-auto max-w-5xl rounded-3xl border bg-background p-8 shadow-sm md:p-12">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium">
+            <BadgeHelp className="h-4 w-4" />
+            Student Help Center
+          </div>
 
-        <p className="mt-2 text-center text-muted-foreground">
-          Find quick answers to common student admission questions.
-        </p>
+          <h2 className="mt-6 text-3xl font-bold md:text-4xl">
+            Frequently Asked Questions
+          </h2>
+
+          <p className="mt-3 text-muted-foreground">
+            Find quick answers to common student
+            admission and counseling questions.
+          </p>
+        </div>
 
         <Accordion
           type="single"
           collapsible
-          className="mt-8 w-full"
+          className="mt-10 w-full"
         >
           <AccordionItem value="item-1">
             <AccordionTrigger>
               How do I choose the right college?
             </AccordionTrigger>
             <AccordionContent>
-              Compare colleges based on courses, fees, placements,
-              rankings, admission process, and career opportunities
-              before applying.
+              Compare colleges based on courses, fees,
+              placements, rankings, admission process,
+              and long-term career opportunities before applying.
             </AccordionContent>
           </AccordionItem>
 
@@ -38,9 +47,9 @@ export default function FAQSection() {
               Do you provide free counseling?
             </AccordionTrigger>
             <AccordionContent>
-              Yes, students can connect with our expert counselors
-              for free admission guidance and personalized career
-              support.
+              Yes, students can connect with our expert
+              counselors for free admission guidance
+              and personalized career support.
             </AccordionContent>
           </AccordionItem>
 
@@ -49,8 +58,9 @@ export default function FAQSection() {
               Can I apply for scholarships through this platform?
             </AccordionTrigger>
             <AccordionContent>
-              Yes, you can explore government, private, merit-based,
-              and entrance exam scholarships available for students.
+              Yes, you can explore government, private,
+              merit-based, and entrance exam scholarships
+              available for students.
             </AccordionContent>
           </AccordionItem>
 
@@ -60,8 +70,8 @@ export default function FAQSection() {
             </AccordionTrigger>
             <AccordionContent>
               Yes, we provide support for university selection,
-              applications, entrance exams, visa guidance, and
-              admission planning for study abroad.
+              applications, entrance exams, visa guidance,
+              and admission planning for study abroad.
             </AccordionContent>
           </AccordionItem>
 
@@ -71,8 +81,8 @@ export default function FAQSection() {
             </AccordionTrigger>
             <AccordionContent>
               Yes, you can compare colleges based on fees,
-              placements, rankings, infrastructure, reviews,
-              and admission eligibility.
+              placements, rankings, infrastructure,
+              reviews, and admission eligibility.
             </AccordionContent>
           </AccordionItem>
 
@@ -93,7 +103,8 @@ export default function FAQSection() {
             </AccordionTrigger>
             <AccordionContent>
               No, the initial counseling and admission guidance
-              support provided through our platform is completely free.
+              support provided through our platform
+              is completely free.
             </AccordionContent>
           </AccordionItem>
 
@@ -103,7 +114,8 @@ export default function FAQSection() {
             </AccordionTrigger>
             <AccordionContent>
               Yes, we regularly share updates about admission dates,
-              entrance exams, counseling rounds, and important notices.
+              entrance exams, counseling rounds,
+              and important notices.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -1,20 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "John Doe",
+    name: "Rahul Sharma",
+    role: "Engineering Student",
     review:
       "The counseling support helped me choose the right engineering college. The process was smooth and clear.",
   },
   {
-    name: "John Doe",
+    name: "Priya Verma",
+    role: "MBA Aspirant",
     review:
-      "I found the best MBA colleges and got admission guidance quickly. Highly useful platform.",
+      "I found the best MBA colleges and got admission guidance quickly. The platform made my decision much easier.",
   },
   {
-    name: "John Doe",
+    name: "Aman Gupta",
+    role: "Medical Student",
     review:
-      "Comparing colleges and courses saved me a lot of time. Very helpful for admission planning.",
+      "Comparing colleges and courses saved me a lot of time. It was extremely helpful for admission planning.",
   },
 ];
 
@@ -22,23 +27,51 @@ export default function StudentReviewsSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-3xl font-bold text-center">
-          Student Reviews
-        </h2>
+        <div className="text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Our Students Say
+          </h2>
 
-        <p className="mt-2 text-muted-foreground text-center">
-          Hear what students say about their admission journey.
-        </p>
+          <p className="mt-3 text-muted-foreground">
+            Hear what students say about their
+            admission journey with us.
+          </p>
+        </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
           {reviews.map((item, index) => (
-            <Card key={index}>
+            <Card
+              key={index}
+              className="rounded-2xl border shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-center">
-                  {item.name}
-                </h3>
+                <div className="flex items-center gap-4">
+                  <Avatar className="h-12 w-12">
+                    <AvatarFallback>
+                      {item.name.charAt(0)}
+                    </AvatarFallback>
+                  </Avatar>
 
-                <p className="mt-4 text-sm text-muted-foreground text-center">
+                  <div>
+                    <h3 className="text-base font-semibold">
+                      {item.name}
+                    </h3>
+
+                    <p className="text-sm text-muted-foreground">
+                      {item.role}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4 flex gap-1">
+                  <Star className="h-4 w-4 fill-current" />
+                  <Star className="h-4 w-4 fill-current" />
+                  <Star className="h-4 w-4 fill-current" />
+                  <Star className="h-4 w-4 fill-current" />
+                  <Star className="h-4 w-4 fill-current" />
+                </div>
+
+                <p className="mt-4 text-sm text-muted-foreground">
                   {item.review}
                 </p>
               </CardContent>

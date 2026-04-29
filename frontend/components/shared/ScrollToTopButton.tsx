@@ -8,7 +8,7 @@ export default function ScrollToTopButton() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowButton(window.scrollY > 300);
+      setShowButton(window.scrollY > 400);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -30,9 +30,10 @@ export default function ScrollToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-24 right-6 z-50 rounded-full border bg-background p-4 shadow-lg transition hover:scale-105"
+      aria-label="Scroll to top"
+      className="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border bg-background shadow-md transition hover:-translate-y-1 hover:shadow-xl"
     >
-      <ArrowUp className="h-6 w-6" />
+      <ArrowUp className="h-5 w-5" />
     </button>
   );
 }
