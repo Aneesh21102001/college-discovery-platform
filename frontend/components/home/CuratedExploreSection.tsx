@@ -1,51 +1,51 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const exams = [
+const curatedItems = [
   {
-    name: "JEE Main",
-    description: "Engineering entrance examination",
+    title: "Top Engineering Colleges",
+    description: "Explore the best B.Tech and engineering institutes in India",
   },
   {
-    name: "NEET",
-    description: "Medical entrance examination",
+    title: "Best MBA Programs",
+    description: "Find top management colleges and MBA specializations",
   },
   {
-    name: "CAT",
-    description: "MBA entrance examination",
+    title: "Medical Admissions",
+    description: "Discover MBBS, BDS, and allied healthcare opportunities",
   },
   {
-    name: "CLAT",
-    description: "Law entrance examination",
+    title: "Competitive Exams",
+    description: "Prepare for entrance exams with the right guidance",
   },
 ];
 
-export default function TopExamsSection() {
+export default function CuratedExploreSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-3xl font-bold text-center">
-          Top Entrance Exams
+          Explore Colleges, Courses & Exams That Are Curated For You
         </h2>
 
         <p className="mt-2 text-muted-foreground text-center">
-          Explore major entrance exams for admissions across India.
+          Discover carefully selected opportunities based on your academic goals.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {exams.map((exam, index) => (
+          {curatedItems.map((item, index) => (
             <Card key={index}>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold">
-                  {exam.name}
+                  {item.title}
                 </h3>
 
                 <p className="mt-3 text-sm text-muted-foreground">
-                  {exam.description}
+                  {item.description}
                 </p>
 
                 <Button className="mt-6 w-full">
-                  View Details
+                  Explore
                 </Button>
               </CardContent>
             </Card>

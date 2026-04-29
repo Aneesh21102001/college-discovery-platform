@@ -2,17 +2,17 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const reviews = [
   {
-    name: "Rahul Sharma",
+    name: "John Doe",
     review:
       "The counseling support helped me choose the right engineering college. The process was smooth and clear.",
   },
   {
-    name: "Priya Verma",
+    name: "John Doe",
     review:
       "I found the best MBA colleges and got admission guidance quickly. Highly useful platform.",
   },
   {
-    name: "Ankit Patel",
+    name: "John Doe",
     review:
       "Comparing colleges and courses saved me a lot of time. Very helpful for admission planning.",
   },
@@ -22,11 +22,11 @@ export default function StudentReviewsSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-3xl font-bold text-center">
           Student Reviews
         </h2>
 
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-2 text-muted-foreground text-center">
           Hear what students say about their admission journey.
         </p>
 

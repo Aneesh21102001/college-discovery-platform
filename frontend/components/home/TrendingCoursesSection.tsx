@@ -1,51 +1,51 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const exams = [
+const trendingCourses = [
   {
-    name: "JEE Main",
-    description: "Engineering entrance examination",
+    name: "Data Science",
+    description: "High-demand course for analytics and AI careers",
   },
   {
-    name: "NEET",
-    description: "Medical entrance examination",
+    name: "MBA in Finance",
+    description: "Popular management specialization for corporate roles",
   },
   {
-    name: "CAT",
-    description: "MBA entrance examination",
+    name: "MBBS",
+    description: "Top medical degree for healthcare professionals",
   },
   {
-    name: "CLAT",
-    description: "Law entrance examination",
+    name: "B.Tech CSE",
+    description: "Leading engineering course for software careers",
   },
 ];
 
-export default function TopExamsSection() {
+export default function TrendingCoursesSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-3xl font-bold text-center">
-          Top Entrance Exams
+          Trending Courses
         </h2>
 
         <p className="mt-2 text-muted-foreground text-center">
-          Explore major entrance exams for admissions across India.
+          Explore the most popular courses students are choosing today.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {exams.map((exam, index) => (
+          {trendingCourses.map((course, index) => (
             <Card key={index}>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold">
-                  {exam.name}
+                  {course.name}
                 </h3>
 
                 <p className="mt-3 text-sm text-muted-foreground">
-                  {exam.description}
+                  {course.description}
                 </p>
 
                 <Button className="mt-6 w-full">
-                  View Details
+                  Explore Course
                 </Button>
               </CardContent>
             </Card>

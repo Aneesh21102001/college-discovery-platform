@@ -1,4 +1,4 @@
-// components/layout/Footer.tsx
+const year = new Date().getFullYear();
 
 export default function Footer() {
   return (
@@ -16,10 +16,13 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-6 text-sm">
-            <a href="#">Privacy Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
             <a href="#">Terms of Service</a>
             <a href="#">Contact Us</a>
           </div>
+        </div>
+        <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
+          © {year} EduPlatform. All Rights Reserved.
         </div>
       </div>
     </footer>

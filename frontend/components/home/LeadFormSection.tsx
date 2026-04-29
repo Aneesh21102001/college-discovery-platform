@@ -6,11 +6,11 @@ export default function LeadFormSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-5xl rounded-2xl border p-8 shadow-sm">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-3xl font-bold text-center">
           Request Admission Guidance
         </h2>
 
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-2 text-muted-foreground text-center">
           Fill in your details and our admission experts will contact you.
         </p>
 

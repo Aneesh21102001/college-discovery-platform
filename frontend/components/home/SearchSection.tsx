@@ -5,11 +5,11 @@ export default function SearchSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-5xl rounded-2xl border p-6 shadow-sm">
-        <h2 className="text-2xl font-bold">
+        <h2 className="text-2xl font-bold text-center">
           Search Colleges & Courses
         </h2>
 
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-2 text-muted-foreground text-center">
           Find top colleges, courses, exams, and admission guidance.
         </p>
 

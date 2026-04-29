@@ -10,11 +10,11 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden gap-6 md:flex">
-          <Link href="/">Home</Link>
-          <Link href="/colleges">Colleges</Link>
+          <Link href="/schools">Schools</Link>
+          <Link href="/colleges-for-12th">12th Colleges</Link>
+          <Link href="/ug-pg-colleges">UG/PG Colleges</Link>
+          <Link href="/universities">Universities</Link>
           <Link href="/courses">Courses</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/contact">Contact</Link>
         </nav>
 
         <Button>

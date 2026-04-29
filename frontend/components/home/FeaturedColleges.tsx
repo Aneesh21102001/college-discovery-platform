@@ -1,12 +1,10 @@
-// components/home/FeaturedColleges.tsx
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const colleges = [
   {
-    name: "IIT Delhi",
-    location: "New Delhi",
+    name: "IIT Bombay",
+    location: "Mumbai",
     courses: "B.Tech, M.Tech, MBA",
   },
   {
@@ -15,9 +13,9 @@ const colleges = [
     courses: "MBA, Executive MBA",
   },
   {
-    name: "BITS Pilani",
-    location: "Rajasthan",
-    courses: "Engineering, Management",
+    name: "AIMS",
+    location: "Delhi",
+    courses: "Medical",
   },
 ];
 
@@ -25,11 +23,11 @@ export default function FeaturedColleges() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-3xl font-bold text-center">
           Featured Colleges
         </h2>
 
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-2 text-muted-foreground text-center">
           Explore top colleges students are searching for.
         </p>
 

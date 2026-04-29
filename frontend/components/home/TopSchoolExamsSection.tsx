@@ -1,39 +1,39 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const exams = [
+const schoolExams = [
   {
-    name: "JEE Main",
-    description: "Engineering entrance examination",
+    name: "CBSE Board Exams",
+    description: "National board exams for Class 10 and 12 students",
   },
   {
-    name: "NEET",
-    description: "Medical entrance examination",
+    name: "ICSE Board Exams",
+    description: "Comprehensive school examinations across India",
   },
   {
-    name: "CAT",
-    description: "MBA entrance examination",
+    name: "Olympiad Exams",
+    description: "Competitive academic exams for school students",
   },
   {
-    name: "CLAT",
-    description: "Law entrance examination",
+    name: "NTSE",
+    description: "Scholarship exam for talented school students",
   },
 ];
 
-export default function TopExamsSection() {
+export default function TopSchoolExamsSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-3xl font-bold text-center">
-          Top Entrance Exams
+          Top School Exams in India
         </h2>
 
         <p className="mt-2 text-muted-foreground text-center">
-          Explore major entrance exams for admissions across India.
+          Explore important school-level exams and scholarship opportunities.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {exams.map((exam, index) => (
+          {schoolExams.map((exam, index) => (
             <Card key={index}>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold">

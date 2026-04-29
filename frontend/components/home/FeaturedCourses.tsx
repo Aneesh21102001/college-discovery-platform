@@ -1,5 +1,3 @@
-// components/home/FeaturedCourses.tsx
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -26,11 +24,11 @@ export default function FeaturedCourses() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-3xl font-bold text-center">
           Featured Courses
         </h2>
 
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-2 text-muted-foreground text-center">
           Explore the most popular courses students choose.
         </p>
 

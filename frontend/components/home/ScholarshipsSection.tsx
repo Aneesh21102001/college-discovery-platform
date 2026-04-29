@@ -1,51 +1,51 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const exams = [
+const scholarships = [
   {
-    name: "JEE Main",
-    description: "Engineering entrance examination",
+    name: "National Scholarship Portal",
+    description: "Government scholarships for UG and PG students",
   },
   {
-    name: "NEET",
-    description: "Medical entrance examination",
+    name: "Merit-Based Scholarships",
+    description: "Scholarships for high academic performance",
   },
   {
-    name: "CAT",
-    description: "MBA entrance examination",
+    name: "Entrance Exam Scholarships",
+    description: "Financial aid through competitive exam performance",
   },
   {
-    name: "CLAT",
-    description: "Law entrance examination",
+    name: "Study Abroad Scholarships",
+    description: "Funding support for international education",
   },
 ];
 
-export default function TopExamsSection() {
+export default function ScholarshipsSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-3xl font-bold text-center">
-          Top Entrance Exams
+          Explore Scholarships
         </h2>
 
         <p className="mt-2 text-muted-foreground text-center">
-          Explore major entrance exams for admissions across India.
+          Search among government, private, and competitive scholarship opportunities.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {exams.map((exam, index) => (
+          {scholarships.map((item, index) => (
             <Card key={index}>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold">
-                  {exam.name}
+                  {item.name}
                 </h3>
 
                 <p className="mt-3 text-sm text-muted-foreground">
-                  {exam.description}
+                  {item.description}
                 </p>
 
                 <Button className="mt-6 w-full">
-                  View Details
+                  Explore
                 </Button>
               </CardContent>
             </Card>

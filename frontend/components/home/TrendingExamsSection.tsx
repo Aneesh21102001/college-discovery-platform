@@ -1,39 +1,39 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const exams = [
+const trendingExams = [
   {
-    name: "JEE Main",
-    description: "Engineering entrance examination",
+    name: "JEE Advanced",
+    description: "Top engineering entrance exam for IIT admissions",
   },
   {
-    name: "NEET",
-    description: "Medical entrance examination",
+    name: "NEET UG",
+    description: "National medical entrance exam for MBBS admissions",
   },
   {
     name: "CAT",
-    description: "MBA entrance examination",
+    description: "Management entrance exam for top MBA colleges",
   },
   {
-    name: "CLAT",
-    description: "Law entrance examination",
+    name: "GATE",
+    description: "Postgraduate engineering and PSU recruitment exam",
   },
 ];
 
-export default function TopExamsSection() {
+export default function TrendingExamsSection() {
   return (
     <section className="px-6 pb-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-3xl font-bold text-center">
-          Top Entrance Exams
+          Trending Exams
         </h2>
 
         <p className="mt-2 text-muted-foreground text-center">
-          Explore major entrance exams for admissions across India.
+          Stay updated with the most searched entrance exams across India.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {exams.map((exam, index) => (
+          {trendingExams.map((exam, index) => (
             <Card key={index}>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold">
@@ -45,7 +45,7 @@ export default function TopExamsSection() {
                 </p>
 
                 <Button className="mt-6 w-full">
-                  View Details
+                  View Exam
                 </Button>
               </CardContent>
             </Card>
