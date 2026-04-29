@@ -40,11 +40,11 @@ export default function PopularCollegesSection() {
           {popularColleges.map((college, index) => (
             <Card key={index}>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-xl font-semibold text-center">
                   {college.name}
                 </h3>
 
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="mt-2 text-sm text-muted-foreground text-center">
                   {college.location}
                 </p>
 

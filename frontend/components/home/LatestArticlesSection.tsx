@@ -32,11 +32,11 @@ export default function LatestArticlesSection() {
           {articles.map((item, index) => (
             <Card key={index}>
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold">
+                <h3 className="text-lg font-semibold text-center">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm text-muted-foreground">
+                <p className="mt-3 text-sm text-muted-foreground text-center">
                   {item.description}
                 </p>
 

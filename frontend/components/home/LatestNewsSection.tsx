@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const news = [
   {
-    title: "JEE Main 2026 Registration Begins",
+    title: "JEE Mains 2026 Registration Begins",
     description: "Application process starts for engineering aspirants across India.",
   },
   {
@@ -32,11 +32,11 @@ export default function LatestNewsSection() {
           {news.map((item, index) => (
             <Card key={index}>
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold">
+                <h3 className="text-lg font-semibold text-center">
                   {item.title}
                 </h3>
 
-                <p className="mt-3 text-sm text-muted-foreground">
+                <p className="mt-3 text-sm text-muted-foreground text-center">
                   {item.description}
                 </p>
 

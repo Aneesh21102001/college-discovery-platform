@@ -36,11 +36,11 @@ export default function TopSchoolExamsSection() {
           {schoolExams.map((exam, index) => (
             <Card key={index}>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-xl font-semibold text-center">
                   {exam.name}
                 </h3>
 
-                <p className="mt-3 text-sm text-muted-foreground">
+                <p className="mt-3 text-sm text-muted-foreground text-center">
                   {exam.description}
                 </p>
 

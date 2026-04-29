@@ -34,11 +34,11 @@ export default function StudentReviewsSection() {
           {reviews.map((item, index) => (
             <Card key={index}>
               <CardContent className="p-6">
-                <h3 className="text-lg font-semibold">
+                <h3 className="text-lg font-semibold text-center">
                   {item.name}
                 </h3>
 
-                <p className="mt-4 text-sm text-muted-foreground">
+                <p className="mt-4 text-sm text-muted-foreground text-center">
                   {item.review}
                 </p>
               </CardContent>
