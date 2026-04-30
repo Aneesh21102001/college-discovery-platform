@@ -1,4 +1,3 @@
-import Navbar from "@/components/layout/Navbar";
 import HeroSection from "@/components/home/HeroSection";
 import SearchSection from "@/components/home/SearchSection";
 import FeaturedColleges from "@/components/home/FeaturedColleges";
@@ -18,14 +17,12 @@ import LatestArticlesSection from "@/components/home/LatestArticlesSection";
 import StudentReviewsSection from "@/components/home/StudentReviewsSection";
 import LeadFormSection from "@/components/home/LeadFormSection";
 import FAQSection from "@/components/home/FAQSection";
-import Footer from "@/components/layout/Footer";
 import WhatsAppFloatingButton from "@/components/shared/WhatsAppFloatingButton";
 import ScrollToTopButton from "@/components/shared/ScrollToTopButton";
 
 export default function HomePage() {
   return (
     <>
-      <Navbar />
 
       <main>
         <HeroSection />
@@ -51,7 +48,6 @@ export default function HomePage() {
 
       <WhatsAppFloatingButton />
       <ScrollToTopButton />
-      <Footer />
     </>
   );
 }

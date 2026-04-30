@@ -30,7 +30,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/ug-pg-colleges"
+            href="/colleges"
             className="text-sm font-medium transition hover:text-primary"
           >
             UG/PG Colleges

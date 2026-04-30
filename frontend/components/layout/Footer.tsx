@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground">
               <Link href="/schools">Schools</Link>
               <Link href="/colleges-for-12th">12th Colleges</Link>
-              <Link href="/ug-pg-colleges">UG/PG Colleges</Link>
+              <Link href="/colleges">UG/PG Colleges</Link>
               <Link href="/universities">Universities</Link>
               <Link href="/courses">Courses</Link>
             </div>
