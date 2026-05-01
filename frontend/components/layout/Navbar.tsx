@@ -49,6 +49,13 @@ export default function Navbar() {
           >
             Courses
           </Link>
+
+          <Link
+            href="/exams"
+            className="text-sm font-medium transition hover:text-primary"
+          >
+            Exams
+          </Link>
         </nav>
 
         <Button size="lg" className="rounded-xl px-6">
