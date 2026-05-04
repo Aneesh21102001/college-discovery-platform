@@ -1,13 +1,12 @@
-export default function CollegeOverview() {
+export default function CollegeOverview({ college }: any) {
   return (
     <div className="rounded-2xl border p-6">
       <h2 className="text-xl font-semibold">
         Overview
       </h2>
 
-      <p className="mt-4 text-sm text-muted-foreground leading-7">
-        IIT Bombay is one of the top engineering institutes in India,
-        known for strong placements, research, and global reputation.
+      <p className="mt-4 text-sm leading-7 text-muted-foreground">
+        {college.overview}
       </p>
     </div>
   );
