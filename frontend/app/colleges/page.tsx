@@ -1,72 +1,57 @@
-import CollegeBanner from "@/components/colleges/CollegeBanner";
-import CollegeFilters from "@/components/colleges/CollegeFilters";
-import CollegeCard from "@/components/colleges/CollegeCard";
-import CollegeCardSkeleton from "@/components/colleges/CollegeCardSkeleton";
-import { colleges } from "@/lib/data/colleges";
+// app/courses/page.tsx
 
-export default function CollegesPage() {
-  const isLoading = false; // later connect real loading
+import CourseBanner from "@/components/courses/CourseBanner";
+import CourseCard from "@/components/courses/CourseCard";
+import CourseFilters from "@/components/courses/CourseFilters";
+
+async function getCourses() {
+  const res = await fetch("http://localhost:3000/api/courses", {
+    cache: "no-store",
+  });
+  return res.json();
+}
+
+export default async function CoursesPage() {
+  const courses = await getCourses();
+  const isLoading = false;
 
   return (
     <>
-      <CollegeBanner />
+      <CourseBanner />
 
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-7xl grid gap-8 lg:grid-cols-4">
 
-          {/* Sidebar */}
-          <div className="lg:col-span-1 sticky top-24 h-fit">
-            <CollegeFilters />
+          <div className="sticky top-24 h-fit">
+            <CourseFilters />
           </div>
 
-          {/* Main Content */}
           <div className="lg:col-span-3 space-y-6">
 
-            {/* Loading */}
             {isLoading ? (
               <div className="grid gap-6 md:grid-cols-2">
                 {[...Array(4)].map((_, i) => (
-                  <CollegeCardSkeleton key={i} />
+                  <div key={i} className="h-40 rounded-2xl border animate-pulse" />
                 ))}
               </div>
-            ) : colleges.length === 0 ? (
-              /* Empty */
+            ) : courses.length === 0 ? (
               <div className="rounded-2xl border p-10 text-center">
-                <h3 className="text-lg font-semibold">
-                  No colleges found
-                </h3>
-
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Try changing filters or search
-                </p>
+                <h3 className="text-lg font-semibold">No courses found</h3>
               </div>
             ) : (
               <>
-                {/* Cards */}
-                <div className="rounded-3xl border shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  {colleges.map((college) => (
-                    <CollegeCard key={college.slug} college={college} />
+                <div className="grid gap-6 md:grid-cols-2">
+                  {courses.map((course: any) => (
+                    <CourseCard key={course.slug} course={course} />
                   ))}
                 </div>
 
-                {/* Pagination */}
-                <div className="mt-6 flex justify-center gap-2">
-                  <button className="rounded-xl border px-4 py-2">
-                    Prev
-                  </button>
-
+                <div className="flex justify-center gap-2">
+                  <button className="rounded-xl border px-4 py-2">Prev</button>
                   {[1, 2, 3].map((p) => (
-                    <button
-                      key={p}
-                      className="rounded-xl border px-4 py-2"
-                    >
-                      {p}
-                    </button>
+                    <button key={p} className="rounded-xl border px-4 py-2">{p}</button>
                   ))}
-
-                  <button className="rounded-xl border px-4 py-2">
-                    Next
-                  </button>
+                  <button className="rounded-xl border px-4 py-2">Next</button>
                 </div>
               </>
             )}
