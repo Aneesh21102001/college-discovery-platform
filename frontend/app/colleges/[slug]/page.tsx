@@ -1,5 +1,3 @@
-// app/colleges/[slug]/page.tsx
-
 import { colleges } from "@/lib/data/colleges";
 import CollegeHeader from "@/components/colleges/CollegeHeader";
 import CollegeInfo from "@/components/colleges/CollegeInfo";
@@ -7,7 +5,7 @@ import CollegeOverview from "@/components/colleges/CollegeOverview";
 import CollegeCourses from "@/components/colleges/CollegeCourses";
 
 export default async function CollegeDetailPage({ params }: any) {
-  const { slug } = await params; // ✅ fix
+  const { slug } = await params;
 
   const college = colleges.find(
     (c) => c.slug === slug

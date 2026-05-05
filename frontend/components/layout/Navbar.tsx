@@ -56,6 +56,13 @@ export default function Navbar() {
           >
             Exams
           </Link>
+
+          <Link
+            href="/compare"
+            className="text-sm font-medium transition hover:text-primary"
+          >
+            Compare
+          </Link>
         </nav>
 
         <Button size="lg" className="rounded-xl px-6">

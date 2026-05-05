@@ -1,5 +1,3 @@
-// app/colleges/page.tsx
-
 import CollegeBanner from "@/components/colleges/CollegeBanner";
 import CollegeCard from "@/components/colleges/CollegeCard";
 import CollegeFilters from "@/components/colleges/CollegeFilters";
