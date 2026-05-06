@@ -72,7 +72,7 @@ export default function CollegeCard({ college }: { college: College }) {
 
         <div className="mt-4 flex items-center gap-2 text-sm font-medium">
           <IndianRupee className="h-4 w-4" />
-          {college.fees}
+          ₹{Number(college.fees).toLocaleString()}
         </div>
 
         <div className="mt-6 grid gap-3">

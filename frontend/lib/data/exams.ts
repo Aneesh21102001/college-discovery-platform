@@ -1,7 +1,7 @@
 export const exams = [
   {
     slug: "jee-main",
-    name: "JEE Main",
+    name: "JEE Mains",
     description: "Engineering entrance exam",
   },
   {

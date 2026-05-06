@@ -4,6 +4,19 @@ import CollegeInfo from "@/components/colleges/CollegeInfo";
 import CollegeOverview from "@/components/colleges/CollegeOverview";
 import CollegeCourses from "@/components/colleges/CollegeCourses";
 
+async function getCollege(slug: string) {
+  const res = await fetch(
+    `http://localhost:5000/api/colleges/${slug}`,
+    {
+      cache: "no-store",
+    }
+  );
+
+  return res.json();
+}
+
+const college = await getCollege(slug);
+
 export default async function CollegeDetailPage({ params }: any) {
   const { slug } = await params;
 

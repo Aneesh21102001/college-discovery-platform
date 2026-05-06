@@ -4,7 +4,7 @@ import CollegeFilters from "@/components/colleges/CollegeFilters";
 
 async function getColleges(query: string) {
   const res = await fetch(
-    `http://localhost:3000/api/colleges?q=${query}`,
+    `http://localhost:5000/api/colleges?q=${query}`,
     { cache: "no-store" }
   );
   return res.json();
@@ -29,7 +29,7 @@ export default async function CollegesPage({ searchParams }: any) {
           {/* Content */}
           <div className="lg:col-span-3 space-y-6">
 
-            {colleges.length === 0 ? (
+            {!Array.isArray(colleges) || colleges.length === 0 ? (
               <div className="rounded-2xl border p-10 text-center">
                 <h3 className="text-lg font-semibold">
                   No colleges found
@@ -38,8 +38,12 @@ export default async function CollegesPage({ searchParams }: any) {
             ) : (
               <>
                 <div className="grid gap-6 md:grid-cols-2">
-                  {colleges.map((college: any) => (
-                    <CollegeCard key={college.slug} college={college} />
+                  {Array.isArray(colleges) &&
+                    colleges.map((college: any) => (
+                      <CollegeCard
+                        key={college.slug}
+                        college={college}
+                      />
                   ))}
                 </div>
 

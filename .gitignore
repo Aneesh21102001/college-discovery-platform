@@ -34,3 +34,4 @@ frontend/tsconfig.tsbuildinfo
 Thumbs.db
 .vscode/
 .idea/
+.env

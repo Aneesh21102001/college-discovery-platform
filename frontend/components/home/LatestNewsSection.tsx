@@ -4,7 +4,7 @@ import { Newspaper, CalendarDays } from "lucide-react";
 
 const news = [
   {
-    title: "JEE Main 2026 Registration Begins",
+    title: "JEE Mains 2026 Registration Begins",
     description:
       "Application process starts for engineering aspirants across India.",
     date: "April 2026",

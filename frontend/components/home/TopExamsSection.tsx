@@ -4,7 +4,7 @@ import { FileCheck, CalendarDays } from "lucide-react";
 
 const exams = [
   {
-    name: "JEE Main",
+    name: "JEE Mains",
     description:
       "Engineering entrance examination",
     type: "Engineering",

@@ -6,7 +6,7 @@ export default function CollegeInfo({ college }: any) {
           Fees
         </p>
         <p className="mt-2 text-lg font-semibold">
-          {college.fees}
+          ₹{Number(college.fees).toLocaleString()}
         </p>
       </div>
 
