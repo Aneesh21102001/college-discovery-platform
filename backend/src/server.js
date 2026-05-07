@@ -5,13 +5,18 @@ const cors = require("cors");
 
 const connectDB = require("./config/db");
 
-connectDB();
-
 const collegeRoutes = require("./routes/collegeRoutes");
 
 const app = express();
 
-app.use(cors());
+// Connect DB FIRST
+connectDB();
+
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json());
 
 app.use("/api/colleges", collegeRoutes);

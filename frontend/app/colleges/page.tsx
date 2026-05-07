@@ -3,11 +3,22 @@ import CollegeCard from "@/components/colleges/CollegeCard";
 import CollegeFilters from "@/components/colleges/CollegeFilters";
 
 async function getColleges(query: string) {
-  const res = await fetch(
-    `http://localhost:5000/api/colleges?q=${query}`,
-    { cache: "no-store" }
-  );
-  return res.json();
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/colleges?q=${query}`,
+      {
+        cache: "no-store",
+      }
+    );
+
+    if (!res.ok) {
+      return [];
+    }
+
+    return res.json();
+  } catch (error) {
+    return [];
+  }
 }
 
 export default async function CollegesPage({ searchParams }: any) {
