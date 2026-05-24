@@ -1,18 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Briefcase } from "lucide-react";
+import { ArrowRight, BookOpen, Briefcase } from "lucide-react";
+import type { Course } from "@/lib/types";
 
-export default function CourseCard({ course }: any) {
+export default function CourseCard({ course }: { course: Course }) {
   return (
-    <Card className="rounded-3xl border shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+    <Card className="rounded-[28px] border-border/70 bg-gradient-to-br from-background to-muted/30 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
       <CardContent className="p-6">
-        <div className="rounded-xl border p-3 w-fit">
+        <div className="w-fit rounded-2xl border border-border/70 bg-background/80 p-3">
           <BookOpen className="h-6 w-6" />
         </div>
 
-        <h3 className="mt-6 text-xl font-semibold">
-          {course.name}
-        </h3>
+        <h3 className="mt-6 text-xl font-semibold">{course.name}</h3>
 
         <p className="mt-3 text-sm text-muted-foreground">
           {course.description}
@@ -25,6 +24,7 @@ export default function CourseCard({ course }: any) {
 
         <Button className="mt-6 w-full rounded-xl">
           View Course
+          <ArrowRight className="h-4 w-4" />
         </Button>
       </CardContent>
     </Card>

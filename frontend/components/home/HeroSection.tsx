@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import {
-  GraduationCap,
   BookOpen,
   Building2,
   Users,

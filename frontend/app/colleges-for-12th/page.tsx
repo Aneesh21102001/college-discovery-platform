@@ -1,27 +1,39 @@
 import CollegeCard from "@/components/colleges/CollegeCard";
+import { fetchApiJson } from "@/lib/api";
+import type { Institution } from "@/lib/types";
 
 async function getData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/junior-colleges`,
-    { cache: "no-store" }
-  );
-  return res.json();
+  try {
+    const data = await fetchApiJson<Institution[]>("/api/junior-colleges");
+    return { data, error: null };
+  } catch (error) {
+    return {
+      data: [] as Institution[],
+      error:
+        error instanceof Error
+          ? error.message
+          : "Unable to load junior colleges right now.",
+    };
+  }
 }
 
 export default async function Page() {
-  const data = await getData();
+  const { data, error } = await getData();
 
   return (
     <section className="px-6 py-10">
-      <h1 className="text-3xl font-bold">
-        12th Colleges
-      </h1>
+      <h1 className="text-3xl font-bold">12th Colleges</h1>
+
+      {error && (
+        <div className="mt-6 rounded-3xl border border-destructive/20 bg-destructive/5 p-6 text-sm text-destructive">
+          {error}
+        </div>
+      )}
 
       <div className="mt-6 grid gap-6 md:grid-cols-2">
-        {Array.isArray(data) &&
-          data.map((item: any) => (
-            <CollegeCard key={item.slug} college={item} />
-          ))}
+        {data.map((item) => (
+          <CollegeCard key={item.slug} college={item} />
+        ))}
       </div>
     </section>
   );

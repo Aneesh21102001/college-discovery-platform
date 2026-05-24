@@ -1,37 +1,45 @@
+import CollegeCourses from "@/components/colleges/CollegeCourses";
 import CollegeHeader from "@/components/colleges/CollegeHeader";
 import CollegeInfo from "@/components/colleges/CollegeInfo";
 import CollegeOverview from "@/components/colleges/CollegeOverview";
-import CollegeCourses from "@/components/colleges/CollegeCourses";
+import { fetchApiJson } from "@/lib/api";
+import type { CollegeDetailPageProps, Institution } from "@/lib/types";
 
 async function getCollege(slug: string) {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/colleges/${slug}`,
-      {
-        cache: "no-store",
-      }
-    );
+    const college = await fetchApiJson<Institution>(`/api/colleges/${slug}`);
 
-    if (!res.ok) {
-      return null;
-    }
-
-    return res.json();
+    return {
+      college,
+      error: null,
+    };
   } catch (error) {
-    return null;
+    return {
+      college: null,
+      error:
+        error instanceof Error
+          ? error.message
+          : "Unable to load the college profile.",
+    };
   }
 }
 
-export default async function CollegeDetailPage({ params }: any) {
+export default async function CollegeDetailPage({
+  params,
+}: CollegeDetailPageProps) {
   const { slug } = await params;
-
-  const college = await getCollege(slug);
+  const { college, error } = await getCollege(slug);
 
   if (!college) {
     return (
-      <div className="p-10 text-center">
-        College not found
-      </div>
+      <section className="px-6 py-16">
+        <div className="mx-auto max-w-3xl rounded-[28px] border bg-background p-10 text-center shadow-sm">
+          <h1 className="text-2xl font-semibold">College not available</h1>
+          <p className="mt-4 text-muted-foreground">
+            {error ?? "The requested college profile could not be found."}
+          </p>
+        </div>
+      </section>
     );
   }
 

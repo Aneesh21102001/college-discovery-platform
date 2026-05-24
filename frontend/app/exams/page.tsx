@@ -1,18 +1,15 @@
-// app/exams/page.tsx
-
 import ExamBanner from "@/components/exams/ExamBanner";
 import ExamCard from "@/components/exams/ExamCard";
 import ExamFilters from "@/components/exams/ExamFilters";
+import { exams } from "@/lib/data/exams";
+import type { Exam } from "@/lib/types";
 
 async function getExams() {
-  const res = await fetch("http://localhost:3000/api/exams", {
-    cache: "no-store",
-  });
-  return res.json();
+  return exams as Exam[];
 }
 
 export default async function ExamsPage() {
-  const exams = await getExams();
+  const examItems = await getExams();
   const isLoading = false;
 
   return (
@@ -20,42 +17,47 @@ export default async function ExamsPage() {
       <ExamBanner />
 
       <section className="px-6 pb-20">
-        <div className="mx-auto max-w-7xl grid gap-8 lg:grid-cols-4">
-
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-4">
           <div className="sticky top-24 h-fit">
             <ExamFilters />
           </div>
 
-          <div className="lg:col-span-3 space-y-6">
-
+          <div className="space-y-6 lg:col-span-3">
             {isLoading ? (
               <div className="grid gap-6 md:grid-cols-2">
-                {[...Array(4)].map((_, i) => (
-                  <div key={i} className="h-40 rounded-2xl border animate-pulse" />
+                {[...Array(4)].map((_, index) => (
+                  <div
+                    key={index}
+                    className="h-40 animate-pulse rounded-2xl border"
+                  />
                 ))}
               </div>
-            ) : exams.length === 0 ? (
+            ) : examItems.length === 0 ? (
               <div className="rounded-2xl border p-10 text-center">
                 <h3 className="text-lg font-semibold">No exams found</h3>
               </div>
             ) : (
               <>
                 <div className="grid gap-6 md:grid-cols-2">
-                  {exams.map((exam: any) => (
+                  {examItems.map((exam) => (
                     <ExamCard key={exam.slug} exam={exam} />
                   ))}
                 </div>
 
                 <div className="flex justify-center gap-2">
                   <button className="rounded-xl border px-4 py-2">Prev</button>
-                  {[1, 2, 3].map((p) => (
-                    <button key={p} className="rounded-xl border px-4 py-2">{p}</button>
+                  {[1, 2, 3].map((page) => (
+                    <button
+                      key={page}
+                      className="rounded-xl border px-4 py-2"
+                    >
+                      {page}
+                    </button>
                   ))}
                   <button className="rounded-xl border px-4 py-2">Next</button>
                 </div>
               </>
             )}
-
           </div>
         </div>
       </section>
