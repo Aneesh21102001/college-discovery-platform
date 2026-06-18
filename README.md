@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EduPlatform
 
-## Getting Started
+A full-stack education discovery platform built with Next.js, Express.js, MongoDB Atlas, and Tailwind CSS. The platform helps students explore colleges, universities, schools, junior colleges, courses, and exams through searchable listings and detailed profiles.
 
-First, run the development server:
+## Features
 
-```bash
+### Institution Discovery
+
+* Browse colleges, universities, schools, and junior colleges
+* Search institutions by name
+* Filter and sort listings
+* Dynamic institution detail pages
+* Responsive user interface
+
+### Courses & Exams
+
+* Explore available courses
+* Browse entrance exams
+* Structured content organization
+
+### Compare Functionality
+
+* Compare multiple institutions
+* Persistent client-side shortlist
+* Side-by-side comparison workflow
+
+### Backend APIs
+
+* RESTful API architecture
+* MongoDB-backed institution data
+* Dynamic routing using slugs
+* Search and filtering support
+
+## Tech Stack
+
+### Frontend
+
+* Next.js 16
+* React
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* Lucide Icons
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+
+## Project Structure
+
+frontend/
+├── app/
+├── components/
+├── lib/
+└── public/
+
+backend/
+├── src/
+│ ├── models/
+│ ├── routes/
+│ ├── config/
+│ └── server.js
+└── package.json
+
+## API Endpoints
+
+### Colleges
+
+GET /api/colleges
+GET /api/colleges/:slug
+
+### Universities
+
+GET /api/universities
+GET /api/universities/:slug
+
+### Schools
+
+GET /api/schools
+GET /api/schools/:slug
+
+### Junior Colleges
+
+GET /api/junior-colleges
+GET /api/junior-colleges/:slug
+
+## Installation
+
+### Clone Repository
+
+git clone <repository-url>
+
+### Backend Setup
+
+cd backend
+
+npm install
+
+Create .env file
+
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+
+Start backend
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Frontend Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+cd frontend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install
 
-## Learn More
+Create .env.local file
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_API_URL=http://localhost:5000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start frontend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+npm run dev
 
-## Deploy on Vercel
+## Future Enhancements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Authentication and authorization
+* Admin dashboard
+* Lead generation and counseling workflows
+* Saved institutions
+* Reviews and ratings
+* Advanced search and filtering
+* Pagination
+* Analytics and monitoring
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Architecture
+
+Frontend (Next.js)
+↓
+REST APIs (Express.js)
+↓
+MongoDB Atlas
+
+## Author
+
+Aneesh Nedunoori
