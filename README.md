@@ -136,9 +136,13 @@ npm run dev
 ## Architecture
 
 Frontend (Next.js)
+
 ↓
+
 REST APIs (Express.js)
+
 ↓
+
 MongoDB Atlas
 
 ## Author
